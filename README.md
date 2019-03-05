@@ -1,4 +1,4 @@
-# FaceREcognitionBrain
+# FaceRecognitionBrain
 
 A simple, scalable, powerful application that will recognize faces from pictures connecting to a [clarifai AI](https://clarifai.com/)
 
