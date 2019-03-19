@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
 const knex = require("knex");
+const path = require("path");
 
 const register = require("../controllers/register");
 const signin = require("../controllers/signin");
@@ -20,6 +21,7 @@ const db = knex({
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.get("/", (req, res) => {
   res.send(db.users);
@@ -43,7 +45,9 @@ app.put("/image", (req, res) => {
 app.post("/imageurl", (req, res) => {
   image.handleApiCall(req, res);
 });
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 app.listen(process.event.PORT || 3001, () => {
   console.log(`I am running on port ${process.env.PORT}`);
 });
