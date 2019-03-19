@@ -1,6 +1,10 @@
 {
   "name": "facerecognitionbrain",
   "version": "0.1.0",
+  "engines": {
+    "node": "11.9.0",
+    "npm": "6.9.0"
+  },
   "private": true,
   "dependencies": {
     "bcrypt": "^3.0.3",
