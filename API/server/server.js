@@ -48,6 +48,6 @@ app.post("/imageurl", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-app.listen(process.event.PORT || 8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log(`I am running on port ${process.env.PORT}`);
 });
